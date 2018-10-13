@@ -1,10 +1,11 @@
 # SimplePythonCache
-A simple python cacheing dictonary; for use with 3rd party api calls for example; i.e. an weather forecast api.
+A simple python cacheing dictonary; for use with own api calls or 3rd party api calls; i.e. a weather forecast api.
 
-Configue the number of items you wish to store in the cache at one time by changing MAX_SIZE in config.py
+Configure the number of items you wish to store in the cache at one time by changing MAX_SIZE in config.py
 
 Then reference with import SimplePythonCache.Cache as Cache
-Add to the cache by Cache.add('CacheKey','response',Seconds before expired)
+
+Add to the cache by Cache.add('CacheKey',Response,Seconds until expiration)
 
 You can retrieve from the cache with Cache.get('CacheKey') or remove from the cache with Cache.remove('CacheKey')
 
