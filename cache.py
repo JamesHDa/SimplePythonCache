@@ -3,16 +3,19 @@ import config
 import datetime as dt
 
 
+
 def add(name,response,time):
-    try:
-        if len(cache) == maxItems:
-            remove()
-        expires = dt.datetime.now() + dt.timedelta(0,time)
-        cache[name]=[response,expires]
-        get(name)
-        return True
-    except:
-        return False
+    if response.status_code < 400: 
+        try:
+            if len(cache) == maxItems:  
+                remove()
+            expires = dt.datetime.now() + dt.timedelta(0,time)
+            cache[name]=[response.content,expires]
+            get(name)
+            return True
+        except:
+            return False
+    return False
 
 def get(name):
     try:
